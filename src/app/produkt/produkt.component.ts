@@ -9,8 +9,11 @@ import { Produkt } from './produkt';
 export class ProduktComponent implements OnInit {
 
   Produkt: Produkt;
+  customPlaceholder: string;
 
-  constructor() { }
+  constructor() {
+    this.customPlaceholder = "nazwa";
+   }
 
   ngOnInit() {
     this.Produkt = new Produkt(1, 'kubek', 'AGD', 'dobry kubek z afryka');
