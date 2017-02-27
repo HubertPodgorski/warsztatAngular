@@ -2,13 +2,16 @@
 <h2>Opis: {{ Produkt.description }}</h2>
 <h2>Kategoria: {{ Produkt.category }}</h2>
 
-<form #productForm="ngForm">
+<form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
   <label for="name">Name</label>
   <input 
     type="text" 
     name="name" 
+    required
     [placeholder]="customPlaceholder"
-    [(ngModel)]="Produkt.name">
+    [(ngModel)]="Produkt.name"
+    #name="ngModel">
+  <div class="error" *ngIf="!name.valid && name.touched">Pole wymagane!</div>
 
   <br/><br/>
 
@@ -17,19 +20,22 @@
     type="text" 
     name="description" 
     [placeholder]="customPlaceholder"
-    [(ngModel)]="Produkt.description">
+    [(ngModel)]="Produkt.description"
+    #description="ngModel">
+  <div class="error" *ngIf="!description.valid">Pole wymagane!</div>
 
   <br/><br/>
 
 
   <label for="category">Categories</label>
-  <select name="category" [(ngModel)]="Produkt.category">
+  <select name="category" [(ngModel)]="Produkt.category" #category="ngModel">
     <option 
       *ngFor="let category of categories" 
       [value]="category">
       {{ category }}
     </option>
   </select>
+  <div class="error" *ngIf="!category.valid">Pole wymagane!</div>
 
   <br/><br/>
 
@@ -37,7 +43,7 @@
     <pre>{{ productForm.value | json }}</pre>
   </div>
 
-  <button> Zapisz </button>
+  <button [disabled]="!productForm.valid"> Zapisz </button>
   <br/><br/>
   <button type="button" (click)="productForm.reset()"> Reset </button>
 </form>

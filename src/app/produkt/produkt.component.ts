@@ -18,11 +18,16 @@ export class ProduktComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.Produkt = new Produkt(1, 'kubek', 'AGD', 'dobry kubek z afryka');
+    this.Produkt = new Produkt(1, null, 'AGD', 'dobry kubek z afryka');
   }
 
   onReset(){
     console.log("kliknięty reset");
+  }
+
+  onSubmit(form){
+    console.log(form.value, "form.value");
+    console.log(form.valid, "form.valid");
   }
 
 }
