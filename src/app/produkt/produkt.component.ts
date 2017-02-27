@@ -16,4 +16,8 @@ export class ProduktComponent implements OnInit {
     this.Produkt = new Produkt(1, 'kubek', 'AGD', 'dobry kubek z afryka');
   }
 
+  onReset(){
+    console.log("kliknięty reset");
+  }
+
 }

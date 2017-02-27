@@ -1,3 +1,19 @@
 <h1>Produkt: {{ Produkt.name }}</h1>
 <h2>Opis: {{ Produkt.description }}</h2>
 <h2>Kategoria: {{ Produkt.category }}</h2>
+
+<form>
+  <label for="name">Name</label>
+  <input type="text" name="name">
+
+  <br/><br/>
+
+  <label for="description">Opis</label>
+  <input type="text" name="description">
+
+  <br/><br/>
+
+  <button> Zapisz </button>
+  <br/><br/>
+  <button type="button" (click)="onReset()"> Reset </button>
+</form>
