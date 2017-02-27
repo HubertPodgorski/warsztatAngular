@@ -13,7 +13,7 @@ export class ProduktComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
+    this.Produkt = new Produkt(1, 'kubek', 'AGD', 'dobry kubek z afryka');
   }
 
 }
