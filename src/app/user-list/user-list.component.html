@@ -1,0 +1,11 @@
+<pre *ngIf="users"> {{ users[0] | json }} </pre>
+
+<div *ngFor="let user of users">
+  <div>{{ user.name }}</div>
+  <div>{{ user.username }}</div>
+  <div>{{ user.age }}</div>
+  <div>{{ user.company.name }}</div>
+  <div>{{ user.address.city }}</div>
+  <div><img [attr.src]="user.avatar"></div>
+  <div>{{ user.website }}</div>
+</div>

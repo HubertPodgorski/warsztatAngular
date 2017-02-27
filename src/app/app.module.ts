@@ -9,6 +9,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProduktComponent } from './produkt/produkt.component';
 import { UzytkownikComponent } from './uzytkownik/uzytkownik.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { UserService } from './user-list/user.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { UzytkownikComponent } from './uzytkownik/uzytkownik.component';
     DashboardComponent,
     ProfileComponent,
     ProduktComponent,
-    UzytkownikComponent
+    UzytkownikComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,9 @@ import { UzytkownikComponent } from './uzytkownik/uzytkownik.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    UserService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
