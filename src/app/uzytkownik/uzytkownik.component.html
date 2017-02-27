@@ -1,0 +1,176 @@
+<pre> {{ user | json }} </pre>
+
+
+
+<form #userForm="ngForm" ngSubmit="submitForm()">
+  <div>
+    <label for="name">Nazwa</label>
+    <input 
+      [placeholder]="user.name"
+      type="text" 
+      name="name"
+      [(ngModel)]="user.name"
+      #name="ngModel"
+      required>
+      <div class="error" *ngIf="!name.valid && name.touched">To pole jest wymagane</div>
+  </div>
+
+  <div>
+    <label for="username">Nazwa użytkownika</label>
+    <input 
+      [placeholder]="user.username"
+      type="text" 
+      name="username"
+      [(ngModel)]="user.username"
+      #username="ngModel"
+      required>
+      <div class="error" *ngIf="!username.valid && username.touched">To pole jest wymagane</div>
+  </div>
+
+  <div>
+    <label for="age">Wiek</label>
+    <input 
+      [placeholder]="user.age"
+      type="text" 
+      name="age"
+      [(ngModel)]="user.age"
+      #age="ngModel"
+      required>
+      <div class="error" *ngIf="!age.valid && age.touched">To pole jest wymagane</div>
+  </div>
+
+  <div>
+    <label for="street">Ulica</label>
+    <input 
+      [placeholder]="user.address.street"
+      type="text" 
+      name="street"
+      [(ngModel)]="user.address.street"
+      #street="ngModel"
+      required>
+      <div class="error" *ngIf="!street.valid && street.touched">To pole jest wymagane</div>
+  </div>
+
+  <div>
+    <label for="suite">Mieszkanie</label>
+    <input 
+      [placeholder]="user.address.suite"
+      type="text" 
+      name="suite"
+      [(ngModel)]="user.address.suite"
+      #suite="ngModel"
+      required>
+      <div class="error" *ngIf="!suite.valid && suite.touched">To pole jest wymagane</div>
+  </div>
+
+  <div>
+    <label for="city">Miasto</label>
+    <input 
+      [placeholder]="user.address.city"
+      type="text" 
+      name="city"
+      [(ngModel)]="user.address.city"
+      #city="ngModel"
+      required>
+      <div class="error" *ngIf="!city.valid && city.touched">To pole jest wymagane</div>
+  </div>
+
+  <div>
+    <label for="zipcode">Kod pocztowy</label>
+    <input 
+      [placeholder]="user.address.zipcode"
+      type="text" 
+      name="zipcode"
+      [(ngModel)]="user.address.zipcode"
+      #zipcode="ngModel"
+      required>
+      <div class="error" *ngIf="!zipcode.valid && zipcode.touched">To pole jest wymagane</div>
+  </div>
+
+  <div>
+    <label for="lat">Lat</label>
+    <input 
+      [placeholder]="user.address.geo.lat"
+      type="text" 
+      name="lat"
+      [(ngModel)]="user.address.geo.lat"
+      #lat="ngModel"
+      required>
+      <div class="error" *ngIf="!lat.valid && lat.touched">To pole jest wymagane</div>
+  </div>
+
+  <div>
+    <label for="lon">Lon</label>
+    <input 
+      [placeholder]="user.address.geo.lon"
+      type="text" 
+      name="lon"
+      [(ngModel)]="user.address.geo.lon"
+      #lon="ngModel"
+      required>
+      <div class="error" *ngIf="!lon.valid && lon.touched">To pole jest wymagane</div>
+  </div>
+
+  <div>
+    <label for="companyName">Nazwa Firmy</label>
+    <input 
+      [placeholder]="user.company.name"
+      type="text" 
+      name="companyName"
+      [(ngModel)]="user.company.name"
+      #companyName="ngModel"
+      required>
+      <div class="error" *ngIf="!companyName.valid && companyName.touched">To pole jest wymagane</div>
+  </div>
+
+  <div>
+    <label for="catchPhrase">Powiedzonko</label>
+    <input 
+      [placeholder]="user.company.catchPhrase"
+      type="text" 
+      name="catchPhrase"
+      [(ngModel)]="user.company.catchPhrase"
+      #catchPhrase="ngModel"
+      required>
+      <div class="error" *ngIf="!catchPhrase.valid && catchPhrase.touched">To pole jest wymagane</div>
+  </div>
+
+  <div>
+    <label for="bs">Bullshit</label>
+    <input 
+      [placeholder]="user.company.bs"
+      type="text" 
+      name="bs"
+      [(ngModel)]="user.company.bs"
+      #bs="ngModel"
+      required>
+      <div class="error" *ngIf="!bs.valid && bs.touched">To pole jest wymagane</div>
+  </div>
+
+  <div>
+    <label for="avatar">Awatar</label>
+    <input 
+      [placeholder]="user.avatar"
+      type="text" 
+      name="avatar"
+      [(ngModel)]="user.avatar"
+      #avatar="ngModel">
+  </div>
+
+  <div>
+    <label for="website">Strona internetowa</label>
+    <input 
+      [placeholder]="user.website"
+      type="text" 
+      name="website"
+      [(ngModel)]="user.website"
+      #website="ngModel">
+  </div>
+
+  <div>
+    <button type="submit" (click)="submitForm(userForm)"> Zapisz </button>
+  </div>
+  <div>
+    <button type="button" (click)="resetForm(userForm)"> Wyczyść </button>
+  </div>
+</form>

@@ -8,13 +8,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProduktComponent } from './produkt/produkt.component';
+import { UzytkownikComponent } from './uzytkownik/uzytkownik.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     ProfileComponent,
-    ProduktComponent
+    ProduktComponent,
+    UzytkownikComponent
   ],
   imports: [
     BrowserModule,
