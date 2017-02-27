@@ -2,18 +2,42 @@
 <h2>Opis: {{ Produkt.description }}</h2>
 <h2>Kategoria: {{ Produkt.category }}</h2>
 
-<form>
+<form #productForm="ngForm">
   <label for="name">Name</label>
-  <input type="text" name="name" [placeholder]="customPlaceholder">
+  <input 
+    type="text" 
+    name="name" 
+    [placeholder]="customPlaceholder"
+    [(ngModel)]="Produkt.name">
 
   <br/><br/>
 
   <label for="description">Opis</label>
-  <input type="text" name="description" [placeholder]="customPlaceholder">
+  <input 
+    type="text" 
+    name="description" 
+    [placeholder]="customPlaceholder"
+    [(ngModel)]="Produkt.description">
 
   <br/><br/>
+
+
+  <label for="category">Categories</label>
+  <select name="category" [(ngModel)]="Produkt.category">
+    <option 
+      *ngFor="let category of categories" 
+      [value]="category">
+      {{ category }}
+    </option>
+  </select>
+
+  <br/><br/>
+
+  <div>
+    <pre>{{ productForm.value | json }}</pre>
+  </div>
 
   <button> Zapisz </button>
   <br/><br/>
-  <button type="button" (click)="onReset()"> Reset </button>
+  <button type="button" (click)="productForm.reset()"> Reset </button>
 </form>
