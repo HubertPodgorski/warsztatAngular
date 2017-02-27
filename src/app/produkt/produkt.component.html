@@ -31,8 +31,8 @@
   <select name="category" [(ngModel)]="Produkt.category" #category="ngModel">
     <option 
       *ngFor="let category of categories" 
-      [value]="category">
-      {{ category }}
+      [value]="category.id">
+      {{ category.name }}
     </option>
   </select>
   <div class="error" *ngIf="!category.valid">Pole wymagane!</div>
